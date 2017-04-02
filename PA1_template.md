@@ -198,3 +198,8 @@ xyplot(interval.mean.impute$steps.mean~interval.mean.impute$interval| interval.m
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+
+* Weekday and weekend pattern have difference:
+1. Both, wake up after 5:30am, weekday have higher steps
+2. Both peak at 9AM, weekend has hight steps.
+3. Weekdays have second peak at 1600 ~ 1700. To weekend, it is at 1900.

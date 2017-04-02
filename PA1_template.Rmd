@@ -110,3 +110,8 @@ interval.mean.impute <- summarise(group_by(dat.impute, interval , wday), steps.m
 
 xyplot(interval.mean.impute$steps.mean~interval.mean.impute$interval| interval.mean.impute$wday  , type='l',layout=c(1,2) , xlab='Interval', ylab='Number of steps')
 ```
+
+* Weekday and weekend pattern have difference:
+1. Both, wake up after 5:30am, weekday have higher steps
+2. Both peak at 9AM, weekend has hight steps.
+3. Weekdays have second peak at 1600 ~ 1700. To weekend, it is at 1900.
