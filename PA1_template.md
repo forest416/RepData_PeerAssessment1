@@ -174,8 +174,10 @@ daily.median.impute
 ```
 * **Conlcusion** The mean step over day doesn't change between prior and after impute data. Since the method of impute data is using mean value of all days by interval
 The median shift a little bit since it changed the whole data distribution by impute mean values to missing values.
+
 ## Are there differences in activity patterns between weekdays and weekends?
 
+* Calculate value by weekday/weekend
 
 ```r
 dat.impute$wday <- as.factor(ifelse(strftime(ymd(dat.impute$date), '%a') %in% c('Mon', 'Tue','Wed', 'Thu', 'Fri'), 'weekday', 'weekend'))
@@ -188,10 +190,11 @@ interval.mean.impute <- summarise(group_by(dat.impute, interval , wday), steps.m
 #axis(side=2, at=seq(0, max(interval.mean.impute$steps.mean), by=50))
 #legend('topright', lty=1,col=c(3,2), legend=c('weekday', 'weekend'))
 #box()
+```
+* Draw a panel plot
 
-
-
+```r
 xyplot(interval.mean.impute$steps.mean~interval.mean.impute$interval| interval.mean.impute$wday  , type='l',layout=c(1,2) , xlab='Interval', ylab='Number of steps')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
